@@ -6,6 +6,15 @@ const path = require("path");
 commonHtmlPlugin = {
 }
 
+
+const htmlTemplates = [
+    { filename: "index", path: "", scripts: ["index.bundle.js"] },
+    { filename: "api-consumption", path: "pages/", scripts: ["index.bundle.js", "api-consumption.bundle.js"] },
+    { filename: "contact", path:"pages/", scripts: ["index.bundle.js", "contact.bundle.js"] },
+    { filename: "about-me", path:"pages/", scripts: ["index.bundle.js"] }
+]
+
+
 module.exports = {
     entry: {
         index: path.resolve(__dirname, "./src/index.ts"),
@@ -36,47 +45,13 @@ module.exports = {
     },
     plugin: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "./src/index.html"),
-            filename: "index.html",
-            inject: false,
-            templateParameters: {
-                scripts: [
-                    "index.bundle.js"
-                ]
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "./src/pages/api-consumption.html"),
-            filename: "pages/api_consumption.html",
-            inject: false,
-            templateParameter: {
-                scripts: [
-                    "index.bundle.js",
-                    "api-consumption.bundle.js"
-                ]
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "./src/pages/contact.html"),
-            filename: "pages/contact.html",
-            inject: false,
-            templateParameters: {
-                scripts: [
-                    "index.bundle.js",
-                    "contact.bundle.js"
-                ]
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "./src/pages/about-me.html"),
-            filename: "pages/about-me.html",
-            inject: false,
-            templateParameters: {
-                scripts: [
-                    "index.bundle.js",
-                ]
-            }
-        })
+        ...htmlTemplates.map(template => 
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, `./src/${template.path}${template.filename}.html`),
+                filename: `pages/${template.filename}.html`,
+                inject: false,
+                templateParameters: { scripts: template.scripts }
+            })
+        )
     ]
 }
