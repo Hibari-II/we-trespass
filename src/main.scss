@@ -1,0 +1,11 @@
+@import "./styles/utils/variables.scss";
+@import "./styles/utils/mixin.scss";
+
+@import "./styles/base/reset.scss";
+@import "./styles/base/typography.scss";
+
+@import "./styles/layout/navigation.scss";
+
+@import "./styles/pages/api-consumption.scss";
+@import "./styles/pages/contact.scss";
+@import "./styles/pages/about-me.scss";
