@@ -2,6 +2,8 @@
 $font-size: 14px;
 $font-family: "Roboto", sans-serif;
 $font-style: normal;
+$font-weight-medium: 500;
+$font-weight-lighter: lighter;
 $font-color: hsl(0, 0, 31);
 $font-color-invert: hsl(0, 0, 95);
 
@@ -13,6 +15,9 @@ $margin-top-mobile: 50px;
 $background-color-blue: hsl(214, 53, 53);
 $background-color-white: hsl(0, 0, 97);
 $shadow-color: hsl(0, 0, 0, 0.25);
+
+$shadow-x-value: 2px;
+$shadow-y-value: 4px;
 
 // Title
 $title-font-size: 2.85rem;
@@ -35,8 +40,6 @@ $button-font-size: 1.25rem;
 $button-font-size-mobile: 1rem;
 $button-text-margin: 14px;
 $button-margin-mobile: 10px;
-
-
 
 $button-color-blue: hsl(214, 53, 53);
 $button-color-green: hsl(94, 38, 53);
