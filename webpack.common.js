@@ -27,6 +27,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js",
+        assetModuleFilename: "images/[name][ext]"
     },
     resolve: { 
         extensions: [ ".tsx", ".ts", "js"]
@@ -44,6 +45,11 @@ module.exports = {
                 test: /\.s[ac]ss$/,
                 exclude: /node_module/,
                 use: [ "style-loader", "css-loader", "sass-loader"]
+            },
+            // Assets Loader
+            {
+                test: /\.(png|svg|jpg|jpeg)$/i,
+                type: "asset/resource"
             }
         ]
     },

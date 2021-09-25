@@ -1,3 +1,6 @@
+// SCSS
 import "./main.scss";
-
-console.log("Index.html")
+// Assets
+import "./assets/logo.svg";
+import "./assets/welcome.svg";
+import "./assets/contact.svg";
