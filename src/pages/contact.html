@@ -6,7 +6,10 @@
     <title>Contact</title>
 </head>
 <body>
+
+    <%= htmlWebpackPlugin.options.navigation %>
+
     <h1>Contact</h1>
-    <% for (const script of scripts) { %> <script src="./<%= script %>"></script> <% } %>
+    <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>
 </body>
 </html>

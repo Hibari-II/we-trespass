@@ -6,10 +6,24 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>Index</h1>
-    <a href="api-consumption.html">test</a>
-    <a href="contact.html">test</a>
-    <a href="about-me.html">test</a>
-    <% for (const script of scripts) { %> <script src="./<%= script %>"></script> <% } %>
+
+    <%= htmlWebpackPlugin.options.navigation %>
+    
+    <section class="welcome">
+        <h1><span>Trespass</span> is <span>a simple web engineering project made with rice 🍙</span></h1>
+
+        <p><span>Trespass</span> was built with HTML5, TypeScript & SCSS. Additionally, the source files were bundled via Webpack & a CICD pipeline was set. This website does not have much functionality. However, you can try it out and have fun.</p>
+
+        <button class="welcome__btn">
+            <h3 class="welcome__btn__text"> API Consumption</h3>
+            <h4 class="welcome__btn__description">Render API data in HTML</h4>
+        </button>
+
+        <button class="welcome__btn">
+            <h3 class="welcome__btn__text">Contact Forms</h3>
+            <h4 class="welcome__btn__description">Send me a message</h4>
+        </button>
+    </section>
+    <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>
 </body>
 </html>

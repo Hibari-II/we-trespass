@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const fs = require("fs")
 
 const scripts = {
     index: "index.bundle.js",
@@ -15,6 +16,7 @@ const htmlTemplates = [
     { filename: "about-me", path:"pages", scripts: [scripts.index] }
 ];
 
+const navigationHtml = fs.readFileSync(path.resolve(__dirname, "./src/templates/navigation.html"));
 
 module.exports = {
     entry: {
@@ -47,11 +49,6 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        // new HtmlWebpackPlugin({
-        //     template: path.resolve(__dirname, `./src/index.html`),
-        //     filename: `index.html`,
-        //     templateParameters: { scripts: [] }
-        // })
         ...htmlTemplates.map(template => {
             const htmlFileName = template.path
                                  ? [template.path, template.filename].join("/")
@@ -61,7 +58,8 @@ module.exports = {
                 template: path.resolve(__dirname, `./src/${htmlFileName}.html`),
                 filename: `${template.filename}.html`,
                 inject: false,
-                templateParameters: { scripts: template.scripts }
+                scripts: template.scripts,
+                navigation: navigationHtml
             });
         })
     ]
