@@ -14,6 +14,7 @@
 }
 
 .navigation {
+    height: $navigation-height;
     width: 100vw;
 
     &__wrapper {
@@ -21,11 +22,11 @@
         margin: $navigation-margin-vertical $navigation-margin-horizontal;
     }
 
-
     &__hamburger {
         @include flex($direction: column, $wrap: nowrap, $justify: space-evenly);
         height: 32px;
         width: 32px;
+        z-index: $navigation-overlay-zindex + 1;
 
         &__line {
             box-sizing: border-box;
@@ -36,29 +37,53 @@
         }
     }
 
+    &__overlay {
+        position: absolute;
+        height: calc(100vh - 64px);
+        width: 100vw;
+        background-color: $background-color-white;
+        z-index: $navigation-overlay-zindex;
+
+        
+        &__links {
+            display: block;
+            
+            li {
+                font-size: $navigation-link-font-size;
+                margin: 0 0;
+        
+                a:link, a:hover, a:hover, a:active {
+                    color: $font-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
     &--desktop {
         display: none;
     }
 }
 
-
-
 // Tablet
 @media screen and (min-width: 1024px) {
     .navigation {
 
-        &__links li {
-            display: inline;
-            font-size: $navigation-link-font-size;
-            margin: 0 $navigation-link-margin-horizontal;
-    
-            a:link, a:hover, a:hover, a:active {
-                color: $font-color;
-                text-decoration: none;
+        &__links {
+            display: block;
+            
+            li {
+                display: inline;
+                font-size: $navigation-link-font-size;
+                margin: 0 $navigation-link-margin-horizontal;
+        
+                a:link, a:hover, a:hover, a:active {
+                    color: $font-color;
+                    text-decoration: none;
+                }
             }
         }
-    
-
+        
         &--mobile {
             display: none;
         }

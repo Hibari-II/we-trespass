@@ -32,6 +32,7 @@ $subtitle-font-color: hsl(0, 1, 71);
 $subtitle-font-color-invert: hsl(8, 81, 60);
 
 // Navigation
+$navigation-height: 64px;
 $navigation-link-font-size: 1.25rem;
 $navigation-margin-vertical: 11px;
 $navigation-margin-horizontal: 20px;
@@ -42,6 +43,8 @@ $navigation-margin-vertical-mobile: 11px;
 $navigation-margin-horizontal-mobile: 20px;
 $navigation-menu-margin-top-mobile: 65px;
 $navigation-menu-margin-bottom-mobile: 50px;
+
+$navigation-overlay-zindex: 1000;
 
 $hamburger-line-size: 3px;
 $hamburger-line-radius: 5px;
