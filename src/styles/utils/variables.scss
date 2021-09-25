@@ -19,6 +19,9 @@ $shadow-color: hsla(0, 0, 0, .25);
 $shadow-x-value: 2px;
 $shadow-y-value: 4px;
 
+$logo_dimension: 42px;
+$logo_font_size: 1.75rem;
+
 // Title
 $title-font-size: 2.85rem;
 $title-font-size-mobile: 2.15rem;
@@ -29,11 +32,22 @@ $subtitle-font-color: hsl(0, 1, 71);
 $subtitle-font-color-invert: hsl(8, 81, 60);
 
 // Navigation
-$navigation-font-size: 1.25rem;
-$navigation-font-size-mobile: 1.25rem;
+$navigation-link-font-size: 1.25rem;
+$navigation-margin-vertical: 11px;
 $navigation-margin-horizontal: 20px;
-$navigation-margin-top: 65px;
-$navigation-margin-bottom: 50px;
+$navigation-link-margin-horizontal: 8px;
+
+$navigation-link-font-size-mobile: 1.25rem;
+$navigation-margin-vertical-mobile: 11px;
+$navigation-margin-horizontal-mobile: 20px;
+$navigation-menu-margin-top-mobile: 65px;
+$navigation-menu-margin-bottom-mobile: 50px;
+
+$hamburger-line-size: 3px;
+$hamburger-line-radius: 5px;
+$hamburger-line-color: $font-color;
+$hamburger-line-width: 32px;
+$hamburger-line-margin-vertical: 5px;
 
 // Button
 $button-font-size: 1.25rem;
