@@ -15,11 +15,12 @@
 
 .navigation {
     height: $navigation-height;
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
 
     &__wrapper {
         @include flex($justify: space-between, $align-items: center);
-        margin: $navigation-margin-vertical $navigation-margin-horizontal;
+        padding: $navigation-margin-vertical $navigation-margin-horizontal;
     }
 
     &__hamburger {
@@ -36,17 +37,8 @@
             background-color: $hamburger-line-color;
             border-radius: $hamburger-line-radius;
 
-            &--top {
-                z-index: 10;
-            }
-
             &--middle {
-                z-index: 9;
                 margin: 7.5px 0;
-            }
-
-            &--bottom {
-                z-index: 10;
             }
         }
 
