@@ -38,25 +38,55 @@
     }
 
     &__overlay {
+        box-sizing: border-box;
         position: absolute;
         height: calc(100vh - 64px);
         width: 100vw;
-        background-color: $background-color-white;
+        padding: $navigation-overlay-padding-top $navigation-overlay-padding-horizontal;
         z-index: $navigation-overlay-zindex;
 
+        background-color: $background-color-white;
         
         &__links {
             display: block;
             
             li {
                 font-size: $navigation-link-font-size;
-                margin: 0 0;
-        
-                a:link, a:hover, a:hover, a:active {
-                    color: $font-color;
-                    text-decoration: none;
+                font-weight: $font-weight-bold;
+                padding: $navigation-overlay-link-padding-vertical 0;
+            }
+        }
+
+        &__seperator {
+            margin: $navigation-overlay-sep-margin-vertical 0;
+        }
+
+
+        &__information {
+            padding-top: $navigation-overlay-link-padding-vertical;
+
+
+            .information-wrapper {
+                h2 {
+                    color: $subtitle-font-color;
+                    font-weight: $font-weight-bold;
+                    font-size: $subtitle-font-size-mobile;
+                    margin-bottom: 7.5px;
+                }
+
+                li {
+                    font-weight: $font-weight-medium;
+                }
+
+                p, li {
+                    padding: 2.5px 0;
                 }
             }
+            
+            .university {
+                margin: 20px 0;
+            }
+
         }
     }
 

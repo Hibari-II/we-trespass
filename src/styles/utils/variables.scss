@@ -2,6 +2,7 @@
 $font-size: 14px;
 $font-family: "Roboto", sans-serif;
 $font-style: normal;
+$font-weight-bold: bold;
 $font-weight-medium: 500;
 $font-weight-lighter: lighter;
 $font-color: hsl(0, 0, 31);
@@ -28,15 +29,22 @@ $title-font-size-mobile: 2.15rem;
 $subtitle-font-size: 1.55rem;
 $subtitle-font-size-mobile: 1.25rem;
 
-$subtitle-font-color: hsl(0, 1, 71);
+$subtitle-font-color: hsl(0, 1, 60);
 $subtitle-font-color-invert: hsl(8, 81, 60);
 
 // Navigation
 $navigation-height: 64px;
 $navigation-link-font-size: 1.25rem;
+
 $navigation-margin-vertical: 11px;
 $navigation-margin-horizontal: 20px;
 $navigation-link-margin-horizontal: 8px;
+
+$navigation-overlay-padding-horizontal: 20px;
+$navigation-overlay-link-padding-vertical: 7.5px;
+$navigation-overlay-header-padding-top: $navigation-overlay-link-padding-vertical;
+$navigation-overlay-padding-top: $margin-top - $navigation-overlay-link-padding-vertical;
+$navigation-overlay-sep-margin-vertical: 45px - $navigation-overlay-link-padding-vertical;
 
 $navigation-link-font-size-mobile: 1.25rem;
 $navigation-margin-vertical-mobile: 11px;
