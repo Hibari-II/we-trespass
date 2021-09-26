@@ -1,4 +1,9 @@
-a:link, a:hover, a:hover, a:active {
+a, a:link, a:active {
     color: $font-color;
     text-decoration: none;
 }
+
+a:hover {
+    color: $subtitle-font-color;
+}
+
