@@ -4,3 +4,6 @@ import "./main.scss";
 import "./assets/logo.svg";
 import "./assets/welcome.svg";
 import "./assets/contact.svg";
+
+// Scripts 
+import "./scripts/navigation";

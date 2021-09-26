@@ -1,37 +1,3 @@
-@keyframes hamburger-line-middle {
-    from {
-        visibility: visible;
-        margin: 7.5px 0;
-    }
-    to {
-        visibility: hidden;
-        z-index: -9999;
-        margin-left: -100px;
-    }
-}
-
-@keyframes hamburger-line-top {
-    from {
-        top: 0%;
-        transform: rotate(0deg);
-    }
-    to {
-        top: 50%;
-        transform: rotate(-45deg);
-    }
-}
-
-@keyframes hamburger-line-bottom {
-    from {
-        top: 100%;
-        transform: rotate(0deg);
-    }
-    to {
-        top: 50%;
-        transform: rotate(45deg);
-    }
-}
-
 .logo {
     @include flex($align-items: center);
 
@@ -83,32 +49,33 @@
                 z-index: 10;
             }
         }
-    }
 
-    &__hamburger:hover {
-        position: relative;
-        .navigation__hamburger__line--middle {
-            animation: hamburger-line-middle 0.4s linear 0s 1;
-            animation-fill-mode: forwards;
-            // transition: display .1s linear, ;
-            // display: none;
-        }
-
-        .navigation__hamburger__line--top {
-            position: absolute;
-            animation: hamburger-line-top .2s linear 0s 1;
-            animation-fill-mode: forwards;
-        }
-        
-        .navigation__hamburger__line--bottom {
-            position: absolute;
-            animation: hamburger-line-bottom .2s linear 0s 1;
-            animation-fill-mode: forwards;
+        &--open {
+            position: relative;
+            .navigation__hamburger__line--middle {
+                animation: hamburger-line-middle .1s linear 0s 1;
+                animation-fill-mode: forwards;
+                // transition: display .1s linear, ;
+                // display: none;
+            }
+    
+            .navigation__hamburger__line--top {
+                position: absolute;
+                animation: hamburger-line-top .2s linear 0s 1;
+                animation-fill-mode: forwards;
+            }
+            
+            .navigation__hamburger__line--bottom {
+                position: absolute;
+                animation: hamburger-line-bottom .2s linear 0s 1;
+                animation-fill-mode: forwards;
+            }
         }
     }
 
     &__overlay {
         box-sizing: border-box;
+        display: none;
         position: absolute;
         height: calc(100vh - 64px);
         width: 100vw;
@@ -156,7 +123,12 @@
             .university {
                 margin: 20px 0;
             }
+        }
 
+        &--open {
+            display: block;
+            animation: hamburger-overlay .1s linear;
+            animation-fill-mode: forwards;
         }
     }
 
@@ -182,5 +154,48 @@
         &--mobile {
             display: none;
         }
+    }
+}
+
+@keyframes hamburger-line-middle {
+    from {
+        opacity: 1;
+        // margin: 7.5px 0;
+    }
+    to {
+        opacity:0;
+        z-index: -9999;
+        // margin-left: -100px;
+    }
+}
+
+@keyframes hamburger-line-top {
+    from {
+        top: 0%;
+        transform: rotate(0deg);
+    }
+    to {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes hamburger-line-bottom {
+    from {
+        top: 100%;
+        transform: rotate(0deg);
+    }
+    to {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes hamburger-overlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
