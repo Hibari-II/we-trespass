@@ -1,0 +1,42 @@
+.welcome {
+    box-sizing: border-box;
+    height: calc(100vh - 64px);
+    width: 100%;
+    padding: $margin-top-mobile $margin-horizontal-mobile;
+    background-color: $background-color-blue;
+
+    > h1, p {
+        color: $font-color-invert;
+        text-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
+    }
+
+    &__title {
+        font-size: $title-font-size-mobile;
+    }
+
+    &__information {
+        font-size: $text-font-size-mobile;
+        margin: $margin-vertical-mobile 0;
+        line-height: 1.5;
+    }
+
+    &__btn {
+        @include flex($direction: column, $justify: center, $align-items: flex-start);
+        width: $button-width;
+        height: $button-height;
+        margin: $button-margin-vertical 0;
+        padding: 0 10px;
+        background-color: $button-color-white;
+        border-radius: $button-radius;
+        border: 0px;
+        box-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
+
+        &__text {
+
+        }
+
+        &__description {
+            font-size: 0.85rem;
+        }
+    }
+}

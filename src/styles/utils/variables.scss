@@ -1,5 +1,6 @@
 // General
-$font-size: 14px;
+$default-font-size: 14px;
+$text-font-size-mobile: 1.15rem;
 $font-family: "Roboto", sans-serif;
 $font-style: normal;
 $font-weight-bold: bold;
@@ -8,10 +9,11 @@ $font-weight-lighter: lighter;
 $font-color: hsl(0, 0%, 31%);
 $font-color-invert: hsl(0, 0%, 95%);
 
-$margin-horizontal: 30px;
-$margin-horizontal-mobile: 45px;
-$margin-top: 25px;
-$margin-top-mobile: 50px;
+$margin-horizontal-mobile: 30px;
+$margin-horizontal: 45px;
+$margin-top-mobile: 25px;
+$margin-vertical-mobile: 25px;
+$margin-top: 50px;
 
 $background-color-blue: hsl(214, 53%, 53%);
 $background-color-white: hsl(0, 0%, 97%);
@@ -19,6 +21,7 @@ $shadow-color: hsla(0, 0%, 0%, .25);
 
 $shadow-x-value: 2px;
 $shadow-y-value: 4px;
+$shadow-blur: 5px;
 
 $logo_dimension: 42px;
 $logo_font_size: 1.75rem;
@@ -43,7 +46,7 @@ $navigation-link-margin-horizontal: 8px;
 $navigation-overlay-padding-horizontal: 20px;
 $navigation-overlay-link-padding-vertical: 7.5px;
 $navigation-overlay-header-padding-top: $navigation-overlay-link-padding-vertical;
-$navigation-overlay-padding-top: $margin-top - $navigation-overlay-link-padding-vertical;
+$navigation-overlay-padding-top: $margin-top-mobile - $navigation-overlay-link-padding-vertical;
 $navigation-overlay-sep-margin-vertical: 45px - $navigation-overlay-link-padding-vertical;
 
 $navigation-link-font-size-mobile: 1.25rem;
@@ -65,6 +68,11 @@ $button-font-size: 1.25rem;
 $button-font-size-mobile: 1rem;
 $button-text-margin: 14px;
 $button-margin-mobile: 10px;
+$button-radius: 5px;
+$button-width: 175px;
+$button-height: 50px;
+$button-margin-vertical: 15px;
+
 
 $button-color-blue: hsl(214, 53%, 53%);
 $button-color-green: hsl(94, 38%, 53%);

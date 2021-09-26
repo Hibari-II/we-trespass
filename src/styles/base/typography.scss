@@ -7,14 +7,20 @@ footer, header, section, summary {
 
 
 html {
-    font-size: $font-size;
+    font-size: $default-font-size;
     font-family: $font-family;
     color: $font-color;
 }
 
 
+.light {
+    font-weight: $font-weight-lighter;
+}
 
 .bold {
     font-weight: $font-weight-bold;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
