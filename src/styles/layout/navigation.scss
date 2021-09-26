@@ -1,3 +1,37 @@
+@keyframes hamburger-line-middle {
+    from {
+        visibility: visible;
+        margin: 7.5px 0;
+    }
+    to {
+        visibility: hidden;
+        z-index: -9999;
+        margin-left: -100px;
+    }
+}
+
+@keyframes hamburger-line-top {
+    from {
+        top: 0%;
+        transform: rotate(0deg);
+    }
+    to {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes hamburger-line-bottom {
+    from {
+        top: 100%;
+        transform: rotate(0deg);
+    }
+    to {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+}
+
 .logo {
     @include flex($align-items: center);
 
@@ -23,9 +57,10 @@
     }
 
     &__hamburger {
-        @include flex($direction: column, $wrap: nowrap, $justify: space-evenly);
+        @include flex($direction: column, $wrap: nowrap, $justify: center);
         height: 32px;
         width: 32px;
+        overflow: hidden;
         z-index: $navigation-overlay-zindex + 1;
 
         &__line {
@@ -34,6 +69,41 @@
             width: $hamburger-line-width;
             background-color: $hamburger-line-color;
             border-radius: $hamburger-line-radius;
+
+            &--top {
+                z-index: 10;
+            }
+
+            &--middle {
+                z-index: 9;
+                margin: 7.5px 0;
+            }
+
+            &--bottom {
+                z-index: 10;
+            }
+        }
+    }
+
+    &__hamburger:hover {
+        position: relative;
+        .navigation__hamburger__line--middle {
+            animation: hamburger-line-middle 0.4s linear 0s 1;
+            animation-fill-mode: forwards;
+            // transition: display .1s linear, ;
+            // display: none;
+        }
+
+        .navigation__hamburger__line--top {
+            position: absolute;
+            animation: hamburger-line-top .2s linear 0s 1;
+            animation-fill-mode: forwards;
+        }
+        
+        .navigation__hamburger__line--bottom {
+            position: absolute;
+            animation: hamburger-line-bottom .2s linear 0s 1;
+            animation-fill-mode: forwards;
         }
     }
 
@@ -106,11 +176,6 @@
                 display: inline;
                 font-size: $navigation-link-font-size;
                 margin: 0 $navigation-link-margin-horizontal;
-        
-                a:link, a:hover, a:hover, a:active {
-                    color: $font-color;
-                    text-decoration: none;
-                }
             }
         }
         
