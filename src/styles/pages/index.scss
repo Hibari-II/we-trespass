@@ -32,11 +32,43 @@
         box-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
 
         &__text {
-
+            font-size: $button-font-size-mobile;
         }
 
         &__description {
-            font-size: 0.85rem;
+            font-size: $button-subtxt-font-size-mobile;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .welcome {
+        padding: $margin-top $margin-horizontal;
+
+
+        &__title {
+            width: 680px;
+            font-size: $title-font-size;
+        }
+
+        &__information {
+            width: 440px;
+            font-size: $subtitle-font-size;
+        }
+
+        &__btn {
+            width: 200px;
+            height: 65px;
+            margin: 25px 0;
+
+            &__text {
+                font-size: $button-font-size;
+                margin-bottom: 4px;
+            }
+    
+            &__description {
+                font-size: $button-subtxt-font-size;
+            }
         }
     }
 }
