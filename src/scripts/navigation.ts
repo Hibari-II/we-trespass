@@ -3,7 +3,6 @@ const hamburgerOverlay = document.getElementsByClassName("navigation__overlay")[
 hamburgerMenu.addEventListener("click", openHamburgerMenu);
 
 function openHamburgerMenu() {
-    console.log("TEST");
     hamburgerMenu.classList.toggle("navigation__hamburger--open");
     hamburgerOverlay.classList.toggle("navigation__overlay--open");
 }
