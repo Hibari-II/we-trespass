@@ -9,7 +9,34 @@
 
     <%= htmlWebpackPlugin.options.navigation %>
 
-    <h1>Api</h1>
+    <div class="petshop">
+
+        <div class="petshop__title">
+            <h1>Doggo Petshop</h1>
+            <h2>You wanna have one? Then you better grab one!</h2>
+        </div>
+
+        <tabel class="petshop__list">
+            <thead class="petshop__list__head">+
+                <tr>
+                    <th>Breed of Dog</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="petshop__list__body">
+                <tr>
+                    <td>Pointer Germanlonghair</td>
+                    <td>One of the goodest bois</td>
+                    <td><button>Grab</button></td>
+                </tr>
+            </tbody>
+        </tabel>
+
+        <a class="button button--blue" href="#">Open Backpack</a>
+    
+    </div>
+
     <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>
 </body>
 </html>
