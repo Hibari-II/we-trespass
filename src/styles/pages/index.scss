@@ -1,11 +1,13 @@
 .welcome {
     box-sizing: border-box;
-    height: calc(100vh - 64px);
+    position: relative;
+
     width: 100%;
+    min-height: 100vh;
     padding: $margin-top-mobile $margin-horizontal-mobile;
     background-color: $background-color-blue;
 
-    > h1, p {
+    h1, p {
         color: $font-color-invert;
         text-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
     }
@@ -39,16 +41,30 @@
             font-size: $button-subtxt-font-size-mobile;
         }
     }
+
+    &__image {
+        width: 500px;
+        height: 500px;
+    }
+
+    &--desktop {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1024px) {
     .welcome {
-        padding: $margin-top $margin-horizontal;
-
+        @include flex($direction: column); 
+        min-height: calc(100vh - 64px);
+        padding: $margin-top $margin-horizontal $margin-horizontal;
 
         &__title {
-            width: 680px;
+            width: 700px;
             font-size: $title-font-size;
+
+            &--spacing {
+                display: inline;
+            }
         }
 
         &__information {
@@ -59,7 +75,7 @@
         &__btn {
             width: 200px;
             height: 65px;
-            margin: 25px 0;
+            margin: 12.5px 0;
 
             &__text {
                 font-size: $button-font-size;
@@ -69,6 +85,24 @@
             &__description {
                 font-size: $button-subtxt-font-size;
             }
+        }
+
+        &__image {
+            position: absolute;
+            display: block;
+            left: 50%;
+            transform: translate(-10vw, 15vh);
+        }
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .welcome {
+        align-content: center;
+
+        &__image {
+            left: 65%;
         }
     }
 }

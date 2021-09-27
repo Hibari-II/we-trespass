@@ -1,18 +1,24 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
 </head>
+
 <body>
 
     <%= htmlWebpackPlugin.options.navigation %>
-    
-    <section class="welcome">
-        <h1 class="welcome__title light"><span class="uppercase">Trespass</span> is <span class="bold">a simple web engineering project fueled by rice 🍙</span></h1>
 
-        <p class="welcome__information"><span class="uppercase">Trespass</span> was built with HTML5, TypeScript & SCSS. Additionally, the source files were bundled via Webpack & a CICD pipeline was set. This website does not have much functionality. However, you can try it out and have fun.</p>
+        <section class="welcome">
+            <h1 class="welcome__title light"><span class="uppercase">Trespass</span> is <span class="bold">a simple web
+                    <span class="welcome__title--spacing welcome--desktop">&nbsp; <br></span> engineering project fueled
+                    with rice 🍙</span></h1>
+
+            <p class="welcome__information"><span class="uppercase">Trespass</span> was built with HTML5, TypeScript &
+                SCSS. Additionally, the source files were bundled via Webpack & a CICD pipeline was set. This website
+                does not have much functionality. However, you can try it out and have fun.</p>
 
             <a class="welcome__btn" href="api-consumption.html">
                 <h3 class="welcome__btn__text"> API Consumption</h3>
@@ -23,7 +29,12 @@
                 <h3 class="welcome__btn__text">Contact Forms</h3>
                 <h4 class="welcome__btn__description">Send me a message</h4>
             </a>
-    </section>
-    <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script src="./<%= script %>"></script> <% } %>
+
+            <object class="welcome__image welcome--desktop" data="images/welcome.svg" type="image/svg+xml"></object>
+        </section>
+
+
+        <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script src="./<%= script %>"></script> <% } %>
 </body>
+
 </html>
