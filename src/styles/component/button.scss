@@ -1,0 +1,23 @@
+.button {
+    box-sizing: border-box;
+    padding: 5px 15px;
+    border-radius: $button-radius;
+    box-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
+
+    &--white {
+        background-color: $button-color-white;
+        border-color: $button-color-white;
+    }
+
+    &--blue {
+        color: $font-color-invert;
+        background-color: $button-color-blue;
+        border-color: $button-color-blue;
+    }
+}
+
+
+a.button {
+    a:hover {
+    }
+}

@@ -9,33 +9,60 @@
 
     <%= htmlWebpackPlugin.options.navigation %>
 
-    <div class="petshop">
+    <section class="api-consumption">
 
-        <div class="petshop__title">
-            <h1>Doggo Petshop</h1>
-            <h2>You wanna have one? Then you better grab one!</h2>
+        <div class="petshop">
+            <div class="petshop__head">
+                <h1 class="petshop__head__title">Doggo Petshop</h1>
+                <h2 class="petshop__head__subtitle">You wanna have one? Then you better grab one!</h2>
+            </div>
+    
+            <!-- <table class="petshop__list">
+                <thead class="petshop__list__head">
+                    <tr>
+                        <th class="petshop__list__head__breed">Breed of Dog</th>
+                        <th class="api-consumption--desktop">Description</th>
+                        <th class="petshop__list__head__action">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="petshop__list__body">
+                    <tr>
+                        <td class="petshop__list__head__breed">Pointer Germanlonghair</td>
+                        <td class="api-consumption--desktop">One of the goodest bois</td>
+                        <td class="petshop__list__head__action"><button>Grab</button></td>
+                    </tr>
+                </tbody>
+            </table> -->
+
+            <section class="petshop__list">
+                <header class="petshop__list__headings">
+                    <div class="petshop__list__row"> 
+                        <div class="petshop__list__row__cell petshop__list__row__cell__breed">Breed of Dog</div>
+                        <div class="petshop__list__row__cell petshop__list__row__cell__description desktop-only">Description</div>
+                        <div class="petshop__list__row__cell petshop__list__row__cell__action">Action</div>
+                    </div>
+                </header>
+                <div class="petshop__list__data">
+                    <div class="petshop__list__row">
+                        <div class="petshop__list__row__cell petshop__list__row__cell__breed">Pointer Germanlonghair</div>
+                        <div class="petshop__list__row__cell petshop__list__row__cell__description desktop-only">One of the goodest bois</div>
+                        <div class="petshop__list__row__cell petshop__list__row__cell__action"><button class="button button--white">Grab</button></div>
+                    </div>
+                    <div class="petshop__list__row">
+                        <div class="petshop__list__row__cell petshop__list__row__cell__breed">Pointer Germanlonghair</div>
+                        <div class="petshop__list__row__cell petshop__list__row__cell__description desktop-only">One of the goodest bois</div>
+                        <div class="petshop__list__row__cell petshop__list__row__cell__action"><button class="button button--white">Grab</button></div>
+                    </div>
+                </div>
+            </section>
+    
+            <a class="button button--blue" href="#">Open Backpack</a>
         </div>
 
-        <table class="petshop__list">
-            <thead class="petshop__list__head">
-                <tr>
-                    <th>Breed of Dog</th>
-                    <th>Description</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody class="petshop__list__body">
-                <tr>
-                    <td>Pointer Germanlonghair</td>
-                    <td>One of the goodest bois</td>
-                    <td><button>Grab</button></td>
-                </tr>
-            </tbody>
-        </table>
 
-        <a class="button button--blue" href="#">Open Backpack</a>
-    
-    </div>
+
+    </section>
+
 
     <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>
 </body>

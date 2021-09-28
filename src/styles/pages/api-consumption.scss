@@ -1,0 +1,86 @@
+.api-consumption {
+    box-sizing: border-box;
+    display: block;
+    padding: $margin-top-mobile $margin-vertical-mobile;
+    height: calc(100vh - 64px);
+
+    &--desktop {
+        display: none;
+    }
+}
+
+
+.petshop {
+    height: 100%;
+
+    &__head {
+        &__title {
+            font-size: $title-font-size-mobile;
+            font-weight: $font-weight-medium;
+        }
+
+        &__subtitle {
+            color: $subtitle-font-color-invert;
+            font-size: $subtitle-font-size-mobile;
+            margin-top: 5px;
+        }
+    }
+
+    &__list {
+        @include flex($direction: column, $align-content: stretch, $wrap: nowrap);
+        margin: $api-list-margin-top 0 $api-list-margin-bottom 0;
+        width: 100%;
+        max-height: 70%;
+        overflow: auto;
+
+
+
+        &__row {
+            @include flex($wrap:nowrap, $justify: space-between, $align-items: center);
+            padding: 0 5px;
+            width: 100%;
+
+            &__cell {
+                &__breed {
+                    width: 50%;
+                    height: auto;
+                }
+    
+                &__action {
+                    width: 30%;
+                    text-align: center;
+                }
+            }
+        }
+
+
+
+        &__headings, &__data {
+            @include flex($align-content: center);
+        }
+
+        &__headings {
+            font-size: $text-font-size-mobile;
+            font-weight: $font-weight-medium;
+            border-bottom: 1px solid $api-list-seperator-color;
+            padding: 10px 0;
+        }
+
+        &__data {
+            margin-top: 10px;
+
+            .petshop__list__row {
+                margin: 7.5px 0;
+            }
+        }
+    }
+}
+
+.desktop-only {
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    
+}

@@ -9,11 +9,13 @@ $font-weight-lighter: lighter;
 $font-color: hsl(0, 0%, 31%);
 $font-color-invert: hsl(0, 0%, 95%);
 
+// Can also be used for padding
 $margin-horizontal-mobile: 30px;
 $margin-horizontal: 45px;
 $margin-top-mobile: 25px;
 $margin-vertical-mobile: 25px;
 $margin-top: 50px;
+// ----------------------------
 
 $background-color-blue: hsl(214, 53%, 53%);
 $background-color-white: hsl(0, 0%, 97%);
@@ -33,7 +35,7 @@ $subtitle-font-size: 1.55rem;
 $subtitle-font-size-mobile: 1.25rem;
 
 $subtitle-font-color: hsl(0, 1%, 60%);
-$subtitle-font-color-invert: hsl(8, 81%, 60%);
+$subtitle-font-color-invert: hsl(8, 81%, 40%);
 
 // Navigation
 $navigation-height: 64px;
@@ -80,3 +82,8 @@ $button-color-blue: hsl(214, 53%, 53%);
 $button-color-green: hsl(94, 38%, 53%);
 $button-color-red: hsl(0, 93%, 73%);
 $button-color-white: hsl(0, 0%, 99%);
+
+
+$api-list-margin-top: 15px;
+$api-list-margin-bottom: 20px;
+$api-list-seperator-color: hsla(0, 0%, 31%, 25%);
