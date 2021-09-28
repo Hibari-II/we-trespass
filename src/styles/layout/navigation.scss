@@ -68,8 +68,7 @@
         box-sizing: border-box;
         display: none;
         position: absolute;
-        height: calc(100vh - 64px);
-        min-height: 100vh;
+        min-height: calc(100vh - 64px);
         width: 100%;
         padding: $navigation-overlay-padding-top $navigation-overlay-padding-horizontal;
         z-index: $navigation-overlay-zindex;
