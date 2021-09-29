@@ -39,6 +39,7 @@
             @include flex($wrap:nowrap, $justify: space-between, $align-items: center);
             padding: 0 5px;
             width: 100%;
+            text-transform: capitalize;
 
             &__cell {
                 overflow: hidden;
@@ -83,5 +84,7 @@
 
 
 @media screen and (min-width: 1024px) {
-    
+    .desktop-only {
+        display: block;
+    }
 }
