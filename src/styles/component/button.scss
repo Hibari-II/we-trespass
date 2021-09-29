@@ -3,21 +3,40 @@
     padding: 5px 15px;
     border-radius: $button-radius;
     box-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
+    // box-shadow: -5px -5px 20px 0 #fff, 5px 5px 20px 0 #babecc;
 
     &--white {
         background-color: $button-color-white;
         border-color: $button-color-white;
+
+
     }
 
     &--blue {
         color: $font-color-invert;
         background-color: $button-color-blue;
         border-color: $button-color-blue;
+
+        &:active {
+            color: $font-color-invert;
+            background-color: hsl(214, 53%, 45%);   //TODO: Change color
+        }
     }
-}
 
+    &--small {
+        padding: 7.5px 17.5px;
+    }
 
-a.button {
-    a:hover {
+    &--medium {
+        padding: 10px 30px;
+    }
+
+    &--large {
+        padding: 15px 40px;
+    }
+
+    &:active {
+        // box-shadow: $button-pressed-shadow-x-value $button-pressed-shadow-y-value $button-pressed-shadow-blur $button-pressed-shadow-color;
+        // box-shadow: -2px -2px  5px 0 #fff, 5px 5px 20px 0 #babecc;
     }
 }
