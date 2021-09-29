@@ -41,6 +41,7 @@
             width: 100%;
 
             &__cell {
+                overflow: hidden;
                 &__breed {
                     width: 50%;
                     height: auto;
