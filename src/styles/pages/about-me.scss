@@ -1,0 +1,62 @@
+.about-me {
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: calc(100vh - 64px);
+    padding: $margin-top-mobile $margin-horizontal-mobile;
+
+    &__title {
+        font-size: $title-font-size-mobile;
+    }
+
+    &__information {
+        p {
+            font-size: $text-font-size-mobile;
+            margin: 25px 0;
+            line-height: 1.5 ;
+        }
+    }
+
+    &__social {
+        h2 {
+            color: $subtitle-font-color;
+            font-weight: $font-weight-bold;
+            font-size: $subtitle-font-size-mobile;
+            margin-bottom: 7.5px;
+        }
+
+        li {
+            font-weight: $font-weight-medium;
+        }
+
+        p, li {
+            padding: 2.5px 0;
+        }
+    }
+
+    &__wave {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -9999;
+        width: 100vw;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .about-me {
+        padding: $margin-top $margin-horizontal;
+
+        &__title, &__information, &__social {
+            width: 500px;
+
+        }
+    }
+
+}

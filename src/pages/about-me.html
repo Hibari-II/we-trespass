@@ -9,18 +9,27 @@
 
     <%= htmlWebpackPlugin.options.navigation %>
 
-    <h1>Hey, my name is <span>Hoa Binh Dinh</span></h1>
+    <div class="about-me">
+        <h1 class="about-me__title light">Hey, my name is <span class="bold"><span class="about-me--spacing about-me--desktop">&nbsp; <br></span>Hoa Binh Dinh</span></h1>
 
-    <p>I was born on 21. September 1995 and currently I am studying Computer Science and Software Design & Engineering in two different universities. The first one in the University of Vienna and the latter one in the University of Applied Science Campus.</p>
-    <p><span>Trespass</span> is a Web Engineering project, that was built to try out Webpack and vanilla JavaScript. Please, do not take this project too seriously.</p>
+        <div class="about-me__information">
+            <p>I was born on 21. September 1995 and currently I am studying Computer Science and Software Design & Engineering in two different universities. The first one in the University of Vienna and the latter one in the University of Applied Science Campus.</p>
+            <p><span class="uppercase">Trespass</span> is a Web Engineering project, that was built to try out Webpack and vanilla JavaScript. Please, do not take this project too seriously.</p>
+        </div>
+        
+        <div class="about-me__social">
+            <h2>Follow me on</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Github</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">LinkedIn</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Instagram</a></li>
+            </ul>
+        </div>
 
-    <h2>Follow me on</h2>
-    <ul>
-        <li><a href="">Github</a></li>
-        <li><a href="">LinkedIn</a></li>
-        <li><a href="">Instagram</a></li>
-    </ul>
-
+        <div class="about-me__wave">
+            <img src="./images/wave.svg" alt="wave">
+        </div>
+    </div>
     <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>
 </body>
 </html>
