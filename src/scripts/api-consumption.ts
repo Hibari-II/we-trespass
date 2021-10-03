@@ -1,20 +1,37 @@
 import { Dog } from "./models/dog";
 import { StolenDog } from "./models/stolendog";
+import { PetshopCell } from "./models/petshopcell";
 
 enum ActionButton {
     steal,
     release
 }
 
+enum TableType {
+    petshop,
+    backpack
+}
+
 enum apiClasses {
-    tableHead = "petshop__table__headings",
-    tableData = "petshop__table__data",
-    tableRow = "petshop__table__row",
-    tableCell = "petshop__table__row__cell",
-    tableCellBreed = "petshop__table__row__cell__breed",
-    tableCellDescription = "petshop__table__row__cell__description",
-    tableCellAmount = "petshop__table__row__cell__amount",
-    tableCellAction = "petshop__table__row__cell__action",
+    petshopTable = "petshop__table",
+    petshopTableHead = "petshop__table__headings",
+    petshopTableData = "petshop__table__data",
+
+    backpackTable = "backpack__table",
+    backpackTableHead = "backpack__table__headings",
+    backpackTableData = "backpack__table__data",
+
+    table = "table",
+    tableHead = "table__headings",
+    tableData = "table__data",
+    tableRow = "table__row",
+    tableCell = "table__row__cell",
+    tableCellBreed = "table__row__cell__breed",
+    tableCellDescription = "table__row__cell__description",
+    tableCellAmount = "table__row__cell__amount",
+    tableCellAction = "table__row__cell__action",
+    tableClose = "table--closed",
+
     tableBackpack = "backpack__table",
     desktop = "desktop-only",
     button = "button",
@@ -42,7 +59,7 @@ const dogDescriptions: string[] = [
 const dogs: Dog[] = []; 
 let backpack: StolenDog[] = [];
 const petshopTable: Element = document.getElementById("petshop-table");
-const backpackTable: Element = document.getElementById("backpack");
+const backpackTable: Element = document.getElementById("backpack-table");
 const petshopTableData: Element = document.getElementById("petshop-table-data");
 const backpackTableData: Element = document.getElementById("backpack-table-data")
 
@@ -72,17 +89,28 @@ function fillDogs(responseJson: any) {
     }
 }
 
+function createTableRow(type: TableType, dog: (Dog | StolenDog), index: number = 0) : PetshopCell {
+    const cellElements: PetshopCell = {
+        breed: createBreedElement(dog.breed),
+        description: createDescriptionElement(dog.description),
+        action: createActionElement(ActionButton.steal, index)
+    };
+
+    if (type == TableType.backpack) {
+        cellElements.amount = createAmountElement((dog as StolenDog).amount);
+        cellElements.action = createActionElement(ActionButton.release, index);
+    }
+
+    return cellElements;
+}
+
 function createPetshopTableRows() {
     let indexCount: number = 0;
     dogs.forEach((dog: Dog) => {
         const newRowElement: Element = document.createElement("div");
         newRowElement.classList.add(apiClasses.tableRow);
-        
-        const cellElements: { [key: string]: Element } = {
-            breed: createBreedElement(dog.breed),
-            description: createDescriptionElement(dog.description),
-            action: createActionElement(ActionButton.steal, indexCount)
-        };
+    
+        const cellElements = createTableRow(TableType.petshop, dog, indexCount);
 
         newRowElement.appendChild(cellElements.breed);
         newRowElement.appendChild(cellElements.description);
@@ -94,24 +122,22 @@ function createPetshopTableRows() {
 }
 
 function updateBackpackTableRows() {
+    emptyBackpackTable();
+
     let indexCount: number = 0;
+    console.log(backpack);
     backpack.forEach((dog: StolenDog) => {
         const newRowElement: Element = document.createElement("div");
         newRowElement.classList.add(apiClasses.tableRow);
 
-        const cellElements: { [key: string]: Element } = {
-            breed: createBreedElement(dog.breed),
-            description: createDescriptionElement(dog.description),
-            amount: createAmountElement(dog.amount),
-            action: createActionElement(ActionButton.release, indexCount)
-        };
+        const cellElements = createTableRow(TableType.backpack, dog, indexCount);
 
         newRowElement.appendChild(cellElements.breed);
         newRowElement.appendChild(cellElements.description);
         newRowElement.appendChild(cellElements.amount);
         newRowElement.appendChild(cellElements.action);
 
-        petshopTableData.appendChild(newRowElement);
+        backpackTableData.appendChild(newRowElement);
         indexCount++;
     });
 }
@@ -163,7 +189,7 @@ function createButtonElement(actionType: ActionButton, dogIndex: number) : Eleme
             buttonEl.innerHTML = "Grab";
             break;
         case ActionButton.release:
-            buttonEl.addEventListener("click", addToBackpack(dogIndex));
+            buttonEl.addEventListener("click", releaseFromBackpack(dogIndex));
             buttonEl.classList.add(apiClasses.buttonRed);
             buttonEl.innerHTML = "Release";
             break;
@@ -196,29 +222,34 @@ function addToBackpack(index: number) {
 function releaseFromBackpack(index: number) {
     return () => {
         console.log("Release dog from backpack");
-        const foundIndex = backpack.findIndex(x => dogs[index].breed === x.breed);
-    
-        if (foundIndex < 0) {
-            return;
-        }
-        let stolenDog: StolenDog = backpack[foundIndex]; 
+        let stolenDog: StolenDog = backpack[index]; 
         stolenDog.amount--;
 
         if (!stolenDog.amount) {
-            backpack = backpack.splice(foundIndex, 1);
-            backpackTable.innerHTML = "";
+            backpack.splice(index, 1);
         }
         updateBackpackTableRows();
     }
 }
 
+function emptyBackpackTable() {
+    backpackTableData.innerHTML = "";
+}
+
 openBackpackButton.addEventListener("click", function() {
     updateBackpackTableRows();
+    backpackTable.classList.remove(apiClasses.tableClose);
+    petshopTable.classList.add(apiClasses.tableClose);
+});
+
+returnPetshopButton.addEventListener("click", function() {
+    backpackTable.classList.add(apiClasses.tableClose)
+    petshopTable.classList.remove(apiClasses.tableClose);
 });
 
 takeHomeButton.addEventListener("click", function() {
     backpack = [];
-    backpackTable.innerHTML = "";
+    emptyBackpackTable();
     alert("You took all doggos to your home!");
 });
 
