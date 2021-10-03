@@ -8,8 +8,6 @@
     &--white {
         background-color: $button-color-white;
         border-color: $button-color-white;
-
-
     }
 
     &--blue {
@@ -21,6 +19,18 @@
             color: $font-color-invert;
             background-color: hsl(214, 53%, 45%);   //TODO: Change color
         }
+    }
+
+    &--red {
+        color: $font-color-invert;
+        background-color: $button-color-red;
+        border-color: $button-color-red;
+    }
+
+    &--green {
+        color: $font-color-invert;
+        background-color: $button-color-green;
+        border-color: $button-color-green;
     }
 
     &--small {
@@ -38,5 +48,9 @@
     &:active {
         // box-shadow: $button-pressed-shadow-x-value $button-pressed-shadow-y-value $button-pressed-shadow-blur $button-pressed-shadow-color;
         // box-shadow: -2px -2px  5px 0 #fff, 5px 5px 20px 0 #babecc;
+    }
+
+    &--closed {
+        display: none;
     }
 }

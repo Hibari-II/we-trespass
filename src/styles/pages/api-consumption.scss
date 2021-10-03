@@ -78,12 +78,83 @@
     }
 }
 
+.backpack__table {
+    .table {
+        &__row {
+            &__cell {
+                &__breed {
+                    width: 40%;
+                    height: auto;
+                }
+
+                &__amount {
+                    width: 30%;
+                    text-align: center;
+                }
+    
+                &__action {
+                    width: 30%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 .desktop-only {
     display: none;
 }
 
 
 @media screen and (min-width: 1024px) {
+    .table {
+        &__row {
+
+            &__cell {
+                &__breed {
+                    width: 35%;
+                    height: auto;
+                }
+
+                &__description {
+                    width: 50%;
+                }
+    
+                &__action {
+                    width: 15%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .backpack__table {
+        .table {
+            &__row {
+                &__cell {
+                    &__breed {
+                        width: 30%;
+                        height: auto;
+                    }
+
+                    &__description {
+                        width: 30%;
+                    }
+    
+                    &__amount {
+                        width: 20%;
+                        text-align: center;
+                    }
+        
+                    &__action {
+                        width: 20%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
     .desktop-only {
         display: block;
     }

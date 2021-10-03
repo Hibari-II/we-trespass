@@ -38,7 +38,8 @@ enum apiClasses {
     buttonWhite = "button--white",
     buttonRed = "button--red",
     buttonSmall = "button--small",
-    buttonMedium = "button--medium"
+    buttonMedium = "button--medium",
+    buttonClose = "button--closed"
 }
 
 const dogDescriptions: string[] = [
@@ -49,11 +50,6 @@ const dogDescriptions: string[] = [
     "Got some ball of steels",
     "One of the coolest doggos",
     "Smeels like poop",
-    "Bites your pp",
-    "Pees on you",
-    "Piece on you",
-    "Sheet on my bed",
-    "Want a fork on the table"
 ]
 
 const dogs: Dog[] = []; 
@@ -238,13 +234,22 @@ function emptyBackpackTable() {
 
 openBackpackButton.addEventListener("click", function() {
     updateBackpackTableRows();
+
     backpackTable.classList.remove(apiClasses.tableClose);
     petshopTable.classList.add(apiClasses.tableClose);
+
+    returnPetshopButton.classList.remove(apiClasses.buttonClose);
+    takeHomeButton.classList.remove(apiClasses.buttonClose);
+    openBackpackButton.classList.add(apiClasses.buttonClose);
 });
 
 returnPetshopButton.addEventListener("click", function() {
     backpackTable.classList.add(apiClasses.tableClose)
     petshopTable.classList.remove(apiClasses.tableClose);
+
+    returnPetshopButton.classList.add(apiClasses.buttonClose);
+    takeHomeButton.classList.add(apiClasses.buttonClose);
+    openBackpackButton.classList.remove(apiClasses.buttonClose);
 });
 
 takeHomeButton.addEventListener("click", function() {
