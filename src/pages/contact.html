@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,33 @@
 
     <%= htmlWebpackPlugin.options.navigation %>
 
-    <h1>Contact</h1>
+    <div class="contact">
+        <h1 class="contact__title">Lets make a deal ...  <span class="bold"><span class="about-me--spacing about-me--desktop">&nbsp; <br></span>Send me a message</span></h1>
+        <form class="contact__form" action="">
+            <div class="contact__form__name">
+                <h3>Name <span class="required"/></h3>
+                <input type="text" name="" id="">
+                <h4 class="warning">A Warning</h4>
+            </div>
+            <div class="contact__form__email">
+                <h3>Email <span class="required"/></h3>
+                <input type="text" name="" id="">
+                <h4 class="warning">A Warning</h4>
+            </div>
+            <div class="contact__form__secret">
+                <h3>Secret Message <span class="required"/></h3>
+                <input type="text" name="" id="">
+                <h4 class="warning">A Warning</h4>
+            </div>
+            <div class="contact__form__iq">
+                <h3>How much IQ do you have? <span class="required"/></h3>
+                <input type="text" name="" id="">
+                <h4 class="warning">A Warning</h4>
+            </div>
+        </form>
+        <button class="button button--white">Send Message</button>
+    </div>
+
     <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>
 </body>
 </html>

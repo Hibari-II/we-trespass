@@ -35,3 +35,10 @@ html {
 .spacing {
     display: inline;
 }
+
+.required {
+    &::after {
+        content: "*";
+        color: $button-color-red;
+    }
+}

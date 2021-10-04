@@ -1,0 +1,44 @@
+.contact {
+    box-sizing: border-box;
+    display: block;
+
+    padding: $margin-top-mobile $margin-vertical-mobile;
+    height: calc(100vh - 64px);
+    width: 100%;
+    color: $font-color-invert;
+    background-color: $background-color-blue;
+
+    h1, h3, h4 {
+        text-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
+    }
+
+    h1 {
+        font-weight: $font-weight-lighter;
+    }
+
+    &__title {
+        font-size: $title-font-size-mobile;
+    }
+
+    &__form {
+        width: 100%;
+        margin: 30px 0;
+
+        &__name, &__email, &__secret, &__iq {
+            width: 100%;
+
+            input {
+                box-sizing: border-box;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $font-color-invert;
+                background-color: hsla(0, 0%, 0%, 0);
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
