@@ -15,26 +15,26 @@
         <form class="contact__form" action="">
             <div class="contact__form__name">
                 <h3>Name <span class="required"/></h3>
-                <input type="text" name="" id="">
+                <input type="text" placeholder="Your Name" name="" id="">
                 <h4 class="warning">A Warning</h4>
             </div>
             <div class="contact__form__email">
                 <h3>Email <span class="required"/></h3>
-                <input type="text" name="" id="">
+                <input type="text" placeholder="your@email.com" name="" id="">
                 <h4 class="warning">A Warning</h4>
             </div>
             <div class="contact__form__secret">
                 <h3>Secret Message <span class="required"/></h3>
-                <input type="text" name="" id="">
+                <input type="text" placeholder="Business plan you want to share" name="" id="">
                 <h4 class="warning">A Warning</h4>
             </div>
             <div class="contact__form__iq">
                 <h3>How much IQ do you have? <span class="required"/></h3>
-                <input type="text" name="" id="">
+                <input type="text" placeholder="At least 1" name="" id="">
                 <h4 class="warning">A Warning</h4>
             </div>
         </form>
-        <button class="button button--white">Send Message</button>
+        <button class="button button--white button--medium">Send Message</button>
     </div>
 
     <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>

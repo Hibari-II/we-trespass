@@ -26,16 +26,23 @@
 
         &__name, &__email, &__secret, &__iq {
             width: 100%;
+            margin: 25px 0;
 
             input {
                 box-sizing: border-box;
                 width: 100%;
+                margin: 7.5px 0;
                 border: none;
                 border-bottom: 1px solid $font-color-invert;
+                color: $font-color-invert;
                 background-color: hsla(0, 0%, 0%, 0);
 
                 &:focus {
                     outline: none;
+                }
+
+                &::placeholder {
+                    color: $placeholder-font-color;
                 }
             }
         }
