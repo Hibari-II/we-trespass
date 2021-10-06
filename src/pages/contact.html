@@ -14,27 +14,27 @@
         <h1 class="contact__title">Lets make a deal ...  <span class="bold"><span class="about-me--spacing about-me--desktop">&nbsp; <br></span>Send me a message</span></h1>
         <form class="contact__form" action="">
             <div class="contact__form__name">
-                <h3>Name <span class="required"/></h3>
-                <input type="text" placeholder="Your Name" name="" id="">
-                <h4 class="warning">A Warning</h4>
+                <label for="name">Name <span class="required"/></label>
+                <input type="text" placeholder="Your Name" name="name" id="input-name">
+                <h4 id="warning-name" class="warning warning--closed">Invalid Name: A name only consists of letters!</h4>
             </div>
             <div class="contact__form__email">
-                <h3>Email <span class="required"/></h3>
-                <input type="text" placeholder="your@email.com" name="" id="">
-                <h4 class="warning">A Warning</h4>
+                <label for="email">Email <span class="required"/></label>
+                <input type="email" placeholder="your@email.com" name="email" id="input-email">
+                <h4 id="warning-email" class="warning warning--closed">Invalid Email!</h4>
             </div>
             <div class="contact__form__secret">
-                <h3>Secret Message <span class="required"/></h3>
-                <input type="text" placeholder="Business plan you want to share" name="" id="">
-                <h4 class="warning">A Warning</h4>
+                <label for="secret">Secret Message <span class="required"/></label>
+                <input type="password" placeholder="Business plan you want to share" name="secret" id="input-secret">
+                <h4 id="warning-secret" class="warning warning--closed">This message should have at least 10 letters!</h4>
             </div>
             <div class="contact__form__iq">
-                <h3>How much IQ do you have? <span class="required"/></h3>
-                <input type="text" placeholder="At least 1" name="" id="">
-                <h4 class="warning">A Warning</h4>
+                <label for="iq">How much IQ do you have? <span class="required"/></label>
+                <input type="number" placeholder="At least 1" name="iq" id="input-iq">
+                <h4 id="warning-iq" class="warning warning--closed">Sorry but your IQ is too low. At least 150!</h4>
             </div>
         </form>
-        <button class="button button--white button--medium">Send Message</button>
+        <div id="send-button" class="button button--white button--medium">Send Message</div>
     </div>
 
     <% for (const script of htmlWebpackPlugin.options.scripts) { %> <script defer src="./<%= script %>"></script> <% } %>

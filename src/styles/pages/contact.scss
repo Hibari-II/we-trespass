@@ -3,7 +3,7 @@
     display: block;
 
     padding: $margin-top-mobile $margin-vertical-mobile;
-    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
     width: 100%;
     color: $font-color-invert;
     background-color: $background-color-blue;
@@ -22,16 +22,21 @@
 
     &__form {
         width: 100%;
-        margin: 30px 0;
+        margin: 25px 0;
 
         &__name, &__email, &__secret, &__iq {
             width: 100%;
             margin: 25px 0;
 
+            label {
+                display: block;
+                font-size: $text-font-size-mobile;
+            }
+
             input {
                 box-sizing: border-box;
                 width: 100%;
-                margin: 7.5px 0;
+                margin: 10px 0 7.5px 0;
                 border: none;
                 border-bottom: 1px solid $font-color-invert;
                 color: $font-color-invert;
@@ -44,6 +49,12 @@
                 &::placeholder {
                     color: $placeholder-font-color;
                 }
+            }
+        }
+
+        &__iq {
+            input[type=number] {
+                width: 20%;
             }
         }
     }
