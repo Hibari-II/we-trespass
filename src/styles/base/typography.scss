@@ -45,4 +45,8 @@ html {
 
 .warning {
     color: $button-color-red;
+
+    &--closed {
+        display: none;
+    }
 }
