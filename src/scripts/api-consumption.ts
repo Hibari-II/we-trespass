@@ -54,6 +54,10 @@ const dogDescriptions: string[] = [
 
 const dogs: Dog[] = []; 
 let backpack: StolenDog[] = [];
+
+const title: HTMLElement = document.getElementById("petshop-title");
+const subtitle: HTMLElement = document.getElementById("petshop-subtitle");
+
 const petshopTable: HTMLElement = document.getElementById("petshop-table");
 const backpackTable: HTMLElement = document.getElementById("backpack-table");
 const petshopTableData: HTMLElement = document.getElementById("petshop-table-data");
@@ -233,6 +237,8 @@ function emptyBackpackTable() {
 }
 
 openBackpackButton.addEventListener("click", function() {
+    title.innerHTML = "Backpack";
+    subtitle.innerHTML = "A thiefs pocket is never empty";
     updateBackpackTableRows();
 
     backpackTable.classList.remove(apiClasses.tableClose);
@@ -244,6 +250,9 @@ openBackpackButton.addEventListener("click", function() {
 });
 
 returnPetshopButton.addEventListener("click", function() {
+    title.innerHTML = "Doggo Petshop";
+    subtitle.innerHTML = "You wanna have one? Then you better grab one!";
+
     backpackTable.classList.add(apiClasses.tableClose)
     petshopTable.classList.remove(apiClasses.tableClose);
 
