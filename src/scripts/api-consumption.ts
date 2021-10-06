@@ -54,14 +54,14 @@ const dogDescriptions: string[] = [
 
 const dogs: Dog[] = []; 
 let backpack: StolenDog[] = [];
-const petshopTable: Element = document.getElementById("petshop-table");
-const backpackTable: Element = document.getElementById("backpack-table");
-const petshopTableData: Element = document.getElementById("petshop-table-data");
-const backpackTableData: Element = document.getElementById("backpack-table-data")
+const petshopTable: HTMLElement = document.getElementById("petshop-table");
+const backpackTable: HTMLElement = document.getElementById("backpack-table");
+const petshopTableData: HTMLElement = document.getElementById("petshop-table-data");
+const backpackTableData: HTMLElement = document.getElementById("backpack-table-data")
 
-const openBackpackButton: Element = document.getElementById("openBackpack-btn");
-const returnPetshopButton: Element = document.getElementById("returnPetshop-btn");
-const takeHomeButton: Element = document.getElementById("takeHome-btn");
+const openBackpackButton: HTMLElement = document.getElementById("openBackpack-btn");
+const returnPetshopButton: HTMLElement = document.getElementById("returnPetshop-btn");
+const takeHomeButton: HTMLElement = document.getElementById("takeHome-btn");
 
 function fillDogs(responseJson: any) {
     const respondingBreeds= responseJson.message;
