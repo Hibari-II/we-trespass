@@ -31,7 +31,7 @@
     @include flex($direction: column, $align-content: stretch, $wrap: nowrap);
     margin: $api-list-margin-top 0 $api-list-margin-bottom 0;
     width: 100%;
-    max-height: 70%;
+    max-height: 60%;
     overflow: auto;
 
     &__row {
@@ -107,7 +107,21 @@
 
 
 @media screen and (min-width: 1024px) {
+    .petshop {
+        &__head {
+            &__title {
+                font-size: $title-font-size;
+            }
+
+            &__subtitle {
+                font-size: $subtitle-font-size;
+                margin-top: 10px;
+            }
+        }
+    }
+
     .table {
+        margin: 30px 0;
         &__row {
 
             &__cell {
@@ -158,4 +172,13 @@
     .desktop-only {
         display: block;
     }
+}
+
+@media screen and (min-width: 1440px) {
+    .api-consumption {
+        width: 1440px;
+        padding: 45px 45px;
+    }
+
+
 }
