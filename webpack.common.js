@@ -1,5 +1,6 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const path = require("path");
 const fs = require("fs")
 
@@ -67,6 +68,6 @@ module.exports = {
                 scripts: template.scripts,
                 navigation: navigationHtml
             });
-        })
+        }),
     ],
 }
