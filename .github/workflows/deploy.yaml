@@ -1,0 +1,21 @@
+name: Trespass Deployment
+on:
+  push:
+    branches: [main]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2#
+      - name: Setup Node.js
+        uses: actions/setup-node
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run build --if-present
+      - uses: netlify/actions/cli@master # This Action enables arbitrary actions with the Netlify CLI
+        env: # environment variables used for netlify action
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_API_ID }}
+        with: # A map of the input parameters defined by the action. Each input parameter is a key/value pair. 
+          args: deploy --dir=dist --prod

@@ -62,5 +62,4 @@ function removeAllWarnings() {
     removeWarning(warningIQ);
 }
 
-
 sendButton.addEventListener("click", sendMessage);
