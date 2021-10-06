@@ -1,11 +1,13 @@
 .button {
     box-sizing: border-box;
+    display: inline-block;
     padding: 5px 15px;
     border-radius: $button-radius;
     box-shadow: $shadow-x-value $shadow-y-value $shadow-blur $shadow-color;
     // box-shadow: -5px -5px 20px 0 #fff, 5px 5px 20px 0 #babecc;
 
     &--white {
+        color: $font-color;
         background-color: $button-color-white;
         border-color: $button-color-white;
     }
