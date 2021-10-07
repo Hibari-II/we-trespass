@@ -1,7 +1,7 @@
 const nameRegex = /^[a-zA-Z ]+$/
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const secretMessageRegex = /^[a-zA-Z ]{10,}$/;
-const iqRegex = /^(1[5-9][0-9]|[1]?[2-9][0-9]{2,})$/;
+const iqRegex = /^(1[5-9][0-9]|[1]?[02-9][0-9]{2,})$/;
 
 const inputName: HTMLInputElement = <HTMLInputElement> document.getElementById("input-name");
 const inputEmail: HTMLInputElement = <HTMLInputElement> document.getElementById("input-email");
