@@ -39,7 +39,11 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_module/,
-                loader: "ts-loader"
+                use: [
+                    "babel-loader",
+                    "ts-loader",
+
+                ]
             },
             // SASS Loader
             {
